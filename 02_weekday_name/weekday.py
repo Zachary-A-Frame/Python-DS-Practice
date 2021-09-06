@@ -1,7 +1,3 @@
-from re import match
-from typing import Match
-
-
 def weekday_name(day_of_week):
     """Return name of weekday.
 
@@ -16,22 +12,22 @@ def weekday_name(day_of_week):
         >>> weekday_name(9)
         >>> weekday_name(0)
     """
-
-    if (day_of_week < 1 or day_of_week > 7):
-        return None
-    else:
-        if day_of_week == 1:
+    # This is a new syntax only available in Python 3.10 and above, wanted to try something hot off the press. You can also solve this problem with if / elif statements. This is cooler, though, so that's what you get.
+    match day_of_week:
+        case 1:
             return "Monday"
-        if day_of_week == 2:
+        case 2:
             return "Tuesday"
-        if day_of_week == 3:
+        case 3:
             return "Wednesday"
-        if day_of_week == 4:
+        case 4:
             return "Thursday"
-        if day_of_week == 5:
+        case 5:
             return "Friday"
-        if day_of_week == 6:
+        case 6:
             return "Saturday"
-        if day_of_week == 7:
+        case 7:
             return "Sunday"
-print(weekday_name(3))
+
+
+print(weekday_name(4))
