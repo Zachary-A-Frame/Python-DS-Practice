@@ -8,13 +8,17 @@ def multiple_letter_count(phrase):
         {'Y': 1, 'a': 1, 'y': 1}
     """
     total = {}
-    val = 1
+    # val = 1
+    # for letter in phrase:
+    #     total.get(letter, val)
+    # else:
+    #     total.update({letter, })
+    # return total
     for letter in phrase:
-        total.get(letter, val)
-    else:
-        total.update({letter, })
+        if letter not in total:
+            total[letter] = 1
+        else:
+            total[letter] = total[letter] + 1
     return total
 
 
-
-multiple_letter_count('Yay')
